@@ -29,7 +29,7 @@ Route::get('/promotion/create-promo', 'PromotionController@createForm')->name('c
 //Read
 Route::get('/promotion/read-promo', 'PromotionController@Read')->name('read');
 //Update
-Route::post('/promotion/update/{data}', 'PromotionController@update')->name('edit');;
-Route::get('/promotion/update-promo/{id}', 'PromotionController@update')->name('editForm');
+Route::post('/promotion/update{id}', 'PromotionController@update')->name('edit');
+Route::get('/promotion/update-promo/{id}', 'PromotionController@updateForm')->name('editForm');
 //Delete
 Route::get('/promotion/delete/{promotionId}', 'PromotionController@delete');

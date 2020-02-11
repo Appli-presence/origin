@@ -21,7 +21,7 @@ class PromotionController extends Controller
         $promotion=new promotion();
         $promotion->libelle=$request->post('libelle');
         $promotion->save();
-        return redirect(route('home'));
+        return redirect(route('read'));
     }
     public function createForm(){
         return view('/promotion/create-promo');
@@ -35,17 +35,18 @@ class PromotionController extends Controller
     }
     public function update(Request $Request,$data)
     {
-        $promo = Promotion::where('id',$data)->first();
+        $promo = Promotion::where('promotionId',$data)->first();
         $promo->libelle = $Request->post('libelle');
         $promo->save();
 
         return redirect(route('read'));
     }
+    public function updateForm(Promotion $id){
+        return view('/promotion/update-promo', ['promotion' =>$id]);
+    }
     public function delete($promotionId){
         $delete=Promotion::where('promotionId',$promotionId);
-        foreach($delete as $d){
-            $d->delete();
-        }
-        //return redirect(route('read'));
+        $delete->delete();
+        return redirect(route('read'));
     }
 }

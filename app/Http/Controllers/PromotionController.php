@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Promotion;
 use Illuminate\Http\Request;
 
+<<<<<<< HEAD
 class PromotionController extends Controller {
 
     public function delete($id)
@@ -16,4 +17,11 @@ class PromotionController extends Controller {
             $d->delete();
         }
     }
+=======
+class PromotionController extends Controller
+{
+
+    //Edit
+    //create
+>>>>>>> 7f2d96a08bbd5ed0605dfce3bd4ed53b751d4001
 }

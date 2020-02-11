@@ -18,3 +18,18 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+//RoutesPromotion
+//Search
+Route::post('search', 'PromotionController@Search')->name('search');
+Route::get('/search-promo', 'PromotionController@Search')->name('searchForm');;
+//Create
+Route::post('/create', 'PromotionController@create')->name('create');
+Route::get('/promotion/create-promo', 'PromotionController@createForm')->name('createForm');
+//Read
+Route::get('/promotion/read-promo', 'PromotionController@Read')->name('read');
+//Update
+Route::post('/promotion/update/{data}', 'PromotionController@update')->name('edit');;
+Route::get('/promotion/update-promo/{id}', 'PromotionController@update')->name('editForm');
+//Delete
+Route::get('/promotion/delete/{promotionId}', 'PromotionController@delete');

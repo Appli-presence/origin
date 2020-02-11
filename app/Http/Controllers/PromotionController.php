@@ -7,5 +7,7 @@ use Illuminate\Http\Request;
 
 class PromotionController extends Controller
 {
+
     //Edit
+    //create
 }

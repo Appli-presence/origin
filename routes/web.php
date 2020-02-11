@@ -18,3 +18,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*Routes etudiant*/
+Route::post('/student/add', 'studentController@addStudent');
+Route::post('/student/update', 'studentController@updateStudent');
+Route::get('/student/delete/{etudiantId}', 'studentController@deleteStudent');
+Route::get('/studentList', 'studentController@getAllStudents')->name('studentList');
+Route::get('/studentList/{{etudiantId}}', 'studentController@getGroupStudents');
+

@@ -31,12 +31,12 @@ class coursController extends Controller
         $user = User::where('role','NOT LIKE','ADMIN')->get();
         $promotion = Promotion::all();
 
-        return view('addCours', ['user' => $user, 'promotion' => $promotion]);
+        return view('lesson.addCours', ['user' => $user, 'promotion' => $promotion]);
     }
 
     public function getCours(){
         $cours = DB::select(DB::raw('SELECT cours.*,name,promotions.libelle AS promo FROM cours, users, promotions WHERE cours.userId = users.id AND cours.promoId = promoId;'));
-        return view('listCours', ['list' => $cours]);
+        return view('lesson.listCours', ['list' => $cours]);
     }
 
     public function updateCours(Request $request){
@@ -56,7 +56,7 @@ class coursController extends Controller
         $user = User::where('role','NOT LIKE','ADMIN')->get();
         $promotion = Promotion::all();
         $cours = cours::find($id);
-        return view('updateCours',['list' => $cours,'user' => $user, 'promotion' => $promotion]);
+        return view('lesson.updateCours',['list' => $cours,'user' => $user, 'promotion' => $promotion]);
     }
 
     public function deleteCours($id){

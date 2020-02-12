@@ -34,6 +34,17 @@ Route::get('/student/delete/{etudiantId}', 'studentController@deleteStudent');
 Route::get('/studentList', 'studentController@getAllStudents')->name('studentList');
 Route::get('/studentList/{{etudiantId}}', 'studentController@getGroupStudents');
 
+//Routes Prof
+
+Route::post('/teacher/add', 'ProfController@addProf')->name('addProf');
+
+Route::get('/teacher/update/{id}', 'ProfController@updateProfForm')->name('updateProfForm');
+Route::post('/teacher/update', 'ProfController@updateProf')->name('updateProf');
+
+Route::get('/teacher', 'ProfController@getProfs')->name('getProfs');
+
+Route::post('/teacher/delete/{id}', 'ProfController@deleteProf')->name('deleteProf');
+
 
 //RoutesPromotion
 //Search

@@ -7,15 +7,15 @@
         @csrf
 
         <label for="name">Nom Complet</label>
-        <input type="text" name="name" id="name">
+        <input type="text" name="name" id="name" required>
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" required>
 
         <br>
 
         <label for="pwd">Mot de Passe</label>
-        <input type="text" name="pwd" id="pwd">
+        <input type="text" name="pwd" id="pwd" required>
 
         <label for="role">Promotion</label>
         <select name="role" id="role">

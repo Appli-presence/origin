@@ -9,15 +9,15 @@
         <input type="hidden" name="id" id="id" value="{{$user->id}}">
 
         <label for="name">Nom Complet</label>
-        <input type="text" name="name" id="name" value="{{$user->name}}">
+        <input type="text" name="name" id="name" value="{{$user->name}}" required>
 
         <label for="email">Email</label>
-        <input type="email" name="email" id="email" value="{{$user->email}}">
+        <input type="email" name="email" id="email" value="{{$user->email}}" required>
 
         <br>
 
         <label for="pwd">Mot de Passe</label>
-        <input type="text" name="pwd" id="pwd" >
+        <input type="text" name="pwd" id="pwd" required>
 
         <label for="role">Role</label>
         <select name="role" id="role">

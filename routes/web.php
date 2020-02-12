@@ -18,7 +18,6 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/cours/addForm', 'coursController@addCoursForm')->name('addCoursForm');
 Route::post('/cours/add', 'coursController@addCours')->name('addCours');
 
@@ -28,4 +27,9 @@ Route::post('/cours/update', 'coursController@updateCours')->name('updateCours')
 Route::get('/cours', 'coursController@getCours')->name('getCours');
 
 Route::post('/cours/delete/{id}', 'coursController@deleteCours')->name('deleteCours');
-
+/*Routes etudiant*/
+Route::post('/student/add', 'studentController@addStudent');
+Route::post('/student/update', 'studentController@updateStudent');
+Route::get('/student/delete/{etudiantId}', 'studentController@deleteStudent');
+Route::get('/studentList', 'studentController@getAllStudents')->name('studentList');
+Route::get('/studentList/{{etudiantId}}', 'studentController@getGroupStudents');

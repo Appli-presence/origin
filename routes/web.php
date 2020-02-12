@@ -33,3 +33,19 @@ Route::post('/student/update', 'studentController@updateStudent');
 Route::get('/student/delete/{etudiantId}', 'studentController@deleteStudent');
 Route::get('/studentList', 'studentController@getAllStudents')->name('studentList');
 Route::get('/studentList/{{etudiantId}}', 'studentController@getGroupStudents');
+
+
+//RoutesPromotion
+//Search
+Route::post('search', 'PromotionController@Search')->name('search');
+Route::get('/search-promo', 'PromotionController@Search')->name('searchForm');;
+//Create
+Route::post('/create', 'PromotionController@create')->name('create');
+Route::get('/promotion/create-promo', 'PromotionController@createForm')->name('createForm');
+//Read
+Route::get('/promotion/read-promo', 'PromotionController@Read')->name('read');
+//Update
+Route::post('/promotion/update{id}', 'PromotionController@update')->name('edit');
+Route::get('/promotion/update-promo/{id}', 'PromotionController@updateForm')->name('editForm');
+//Delete
+Route::get('/promotion/delete/{promotionId}', 'PromotionController@delete');

@@ -2,34 +2,37 @@
 
 @section('content')
 <div class="container">
-    <form action="{{ route('addProf') }}" method="POST">
+    <form action="{{ route('addProf') }}" method="POST" >
 
         @csrf
 
-        <label for="name">Nom Complet</label>
-        <input type="text" name="name" id="name" required>
-
-        <label for="email">Email</label>
-        <input type="email" name="email" id="email" required>
-
-        <br>
-
-        <label for="pwd">Mot de Passe</label>
-        <input type="text" name="pwd" id="pwd" required>
-
-        <label for="role">Promotion</label>
-        <select name="role" id="role">
-            <option >PROFESSEUR</option>
-            <option >INTERVENANT</option>
-        </select>
-
-        <br>
-
-        <input type="submit" value="Ajouter">
+        <div style="display: flex">
+            <div class="col-md-6">
+                <label for="name">Nom Complet</label>
+                <input type="text" name="name" id="name" required>
+                <br>
+                <label for="pwd">Mot de Passe</label>
+                <input type="text" name="pwd" id="pwd" required>
+            </div>
+    
+            
+            <div class="col-md-6">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" required>
+                <br>
+    
+                <label for="role">Promotion</label>
+                <select name="role" id="role">
+                    <option >PROFESSEUR</option>
+                    <option >INTERVENANT</option>
+                </select>
+            </div>
+        </div>
+        <input type="submit" value="Ajouter" class="float-right btn btn-primary">
 
     </form>
     <br><br>
-    <table border="1">
+    <table>
         <tr>
         <th>Nom </th>
         <th>Email</th>

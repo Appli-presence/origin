@@ -14,7 +14,7 @@ class studentController extends Controller
 {
     /*Selectionner tous les etudiants*/
     public function getAllStudents(){
-        $students = DB::table('etudiants')->join('appartientpromotions', 'appartientpromotions.etudiantId', '=', 'etudiants.etudiantId')->join('promotions', 'promotions.promotionId', '=', 'appartientpromotions.promotionId')->get();
+        $students = DB::table('etudiants')->leftjoin('appartientpromotions', 'appartientpromotions.etudiantId', '=', 'etudiants.etudiantId')->leftjoin('promotions', 'promotions.promotionId', '=', 'appartientpromotions.promotionId')->get();
         $promotions = new Promotion();
         $promotions = Promotion::all();
         $return = ["student" =>  $students, "promo"=> $promotions];

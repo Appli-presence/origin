@@ -12,11 +12,11 @@
                 </div>
                     <div class="card-body">
                         <table>
-                            <thread>
+                            <thead>
                                 <th>Promotions</th>
                                 <th></th>
                                 <th></th>
-                            </thread>
+                            </thead>
                             @foreach($promotions as $promotion)
                         <tr>
                             <td>{{ $promotion->libelle }}</td>

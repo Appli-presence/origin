@@ -33,6 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+
                     @guest
                     @else
                         @if ( Auth::user()->role == 'ADMIN')
@@ -43,8 +44,9 @@
                         @else
                             <a href="./teacherCall"><li>Gestion appel</li></a>
                         @endIf
-                    @endguest
-                    
+                    @endGuest
+
+
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

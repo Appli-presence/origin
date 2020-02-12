@@ -45,7 +45,7 @@
                                   <a class="nav-item nav-link" href="./studentList">Gestion étudiants</a>
                                   <a class="nav-item nav-link" href="./promotion">Gestion promotions</a>
                                   <a class="nav-item nav-link" href="./cours">Gestion cours</a>
-                                  <a class="nav-item nav-link" href="./teacher" tabindex="-1" aria-disabled="true">Gestion Professeurs</a>
+                                  <a class="nav-item nav-link" href="./teacher">Gestion Professeurs</a>
                                 </div>
                               </div>
                              

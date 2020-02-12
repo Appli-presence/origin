@@ -6,8 +6,8 @@
         <div id='addStudent' class="col-md-6">
             <form action="./student/add" method="POST">
                 @csrf
-                <input type="text" name="nom" placeholder="Nom" class="col-md-6"/>
-                <input type="text" name="prenom" placeholder="Prénom" class="col-md-6"/>
+                <input type="text" name="nom" placeholder="Nom" class="col-md-6" required/>
+                <input type="text" name="prenom" placeholder="Prénom" class="col-md-6" required/>
                 <input type="submit" value="Ajouter" class='offset-md-5 btn btn-primary' >
             </form>
         </div>
@@ -64,8 +64,8 @@
                             <form action="./student/update" method='POST'>
                                 @csrf
                                 <input type="hidden" name="etudiantId" value="{{$value->etudiantId}}"/>
-                                <input type="text" name="nom" placeholder="Nom" value="{{$value->nom}}" class='col-md-12'/>
-                                <input type="text" name="prenom" placeholder="Prénom" value="{{$value->prenom}}" class='col-md-12'/>
+                                <input type="text" name="nom" placeholder="Nom" value="{{$value->nom}}" class='col-md-12' required/>
+                                <input type="text" name="prenom" placeholder="Prénom" value="{{$value->prenom}}" class='col-md-12' required/>
                                 <input type="submit" value="Modifier" value="" class='float-right btn btn-secondary'>
                             </form>
                         </div>

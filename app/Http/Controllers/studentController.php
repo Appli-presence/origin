@@ -14,7 +14,7 @@ class studentController extends Controller
 {
     /*Selectionner tous les etudiants*/
     public function getAllStudents(){
-        $students = DB::table('etudiants')->leftjoin('appartientpromotions', 'appartientpromotions.etudiantId', '=', 'etudiants.etudiantId')->leftjoin('promotions', 'promotions.promotionId', '=', 'appartientpromotions.promotionId')->get();
+        $students = DB::select(DB::raw('SELECT E.*, Pr.* FROM etudiants AS E LEFT JOIN appartientpromotions AS P ON P.etudiantId = E.etudiantId LEFT JOIN promotions AS Pr ON Pr.promotionId = P.promotionId '));
         $promotions = new Promotion();
         $promotions = Promotion::all();
         $return = ["student" =>  $students, "promo"=> $promotions];
@@ -47,6 +47,9 @@ class studentController extends Controller
     }
     /*Supprimer un etudiant */
     public function deleteStudent($studentId){
+        $promotions = new AppartientPromotion();
+        $promotions = AppartientPromotion::where('etudiantId', $studentId);
+        $promotions->delete();
         $student = new Etudiant();
         $student = Etudiant::where('etudiantId', $studentId);
         $student->delete();

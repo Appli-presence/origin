@@ -8,7 +8,7 @@
     <input type="hidden" name="id" id="id" value="{{ $list->coursId }}">
 
         <label for="libelle">Nom du cours</label>
-        <input type="text" name="libelle" id="libelle" value="{{ $list->libelle }}">
+        <input type="text" name="libelle" id="libelle" value="{{ $list->libelle }}" required>
 
         <label for="userId">Nom de l'enseignant</label>
         <select name="userId" id="userId">

@@ -7,7 +7,7 @@
         @csrf
 
         <label for="libelle">Nom du cours</label>
-        <input type="text" name="libelle" id="libelle">
+        <input type="text" name="libelle" id="libelle" required/>
 
         <label for="userId">Nom de l'enseignant</label>
         <select name="userId" id="userId">

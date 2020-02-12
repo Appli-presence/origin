@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/promotion', function () {
+    return view('/promotion/index');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -44,6 +48,7 @@ Route::post('/create', 'PromotionController@create')->name('create');
 Route::get('/promotion/create-promo', 'PromotionController@createForm')->name('createForm');
 //Read
 Route::get('/promotion/read-promo', 'PromotionController@Read')->name('read');
+Route::get('/promotion/index', 'PromotionController@readIndex')->name('index');
 //Update
 Route::post('/promotion/update{id}', 'PromotionController@update')->name('edit');
 Route::get('/promotion/update-promo/{id}', 'PromotionController@updateForm')->name('editForm');

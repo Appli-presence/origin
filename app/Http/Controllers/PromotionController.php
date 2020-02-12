@@ -33,6 +33,12 @@ class PromotionController extends Controller
             "promotions"=>$promotion
             ]);
     }
+    public function readIndex()
+    {
+        $promotion=promotion::all();
+        return view('/promotion/index',[
+            "promotions"=>$promotion]);
+    }
     public function update(Request $Request,$data)
     {
         $promo = Promotion::where('promotionId',$data)->first();

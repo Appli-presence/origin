@@ -41,7 +41,7 @@
                                             </div>
 
                                             <div class="modal-body">
-                                                <form action="/teacherrole/appel" method="GET">
+                                                <form action="./teacherrole/appel" method="GET">
                                                     @csrf
                                                     @include('teacherRole/list_appel')
                                             </div>

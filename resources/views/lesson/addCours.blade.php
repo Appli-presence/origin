@@ -23,7 +23,7 @@
             @endforeach
         </select>
 
-        <label for="date">Date</label>
+    <!--     <label for="date">Date</label>
         <input type="date" name="date" id="date">
 
         <label for="h_debut">Heure du début du cours</label>
@@ -32,7 +32,7 @@
         <label for="h_fin">Heure de fin du cours</label>
         <input type="time" name="h_fin" id="h_fin">
 
-        <input type="submit" value="Ajouter le cours">
+    -->     <input type="submit" value="Ajouter le cours">
 
     </form>
 </div>

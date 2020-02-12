@@ -30,14 +30,14 @@
             @endforeach
         </select>
 
-        <label for="date">Date</label>
+        <!-- <label for="date">Date</label>
         <input type="date" name="date" id="date" value="{{ date('Y-m-d',strtotime($list->debut )) }}">
 
         <label for="h_debut">Heure du début du cours</label>
         <input type="time" name="h_debut" id="h_debut" value="{{ date('H:i',strtotime($list->debut )) }}">
 
         <label for="h_fin">Heure de fin du cours</label>
-        <input type="time" name="h_fin" id="h_fin" value="{{ date('H:i',strtotime($list->fin ))}}">
+        <input type="time" name="h_fin" id="h_fin" value="{{ date('H:i',strtotime($list->fin ))}}"> -->
 
         <input type="submit" value="Modifier le cours">
 

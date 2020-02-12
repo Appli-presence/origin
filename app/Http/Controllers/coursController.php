@@ -18,9 +18,9 @@ class coursController extends Controller
         $cours = new cours();
 
         $cours->libelle = $request->libelle;
-        $cours->debut = $request->date.' '.$request->h_debut.':00';
+        /*$cours->debut = $request->date.' '.$request->h_debut.':00';
         $cours->fin = $request->date.' '.$request->h_fin.':00';
-        $cours->userId = $request->userId;
+ */       $cours->userId = $request->userId;
         $cours->promoId = $request->promoId;
 
         $cours->save();
@@ -35,16 +35,18 @@ class coursController extends Controller
     }
 
     public function getCours(){
+        $user = User::where('role','NOT LIKE','ADMIN')->get();
+        $promotion = Promotion::all();
         $cours = DB::select(DB::raw('SELECT cours.*,name,promotions.libelle AS promo FROM cours, users, promotions WHERE cours.userId = users.id AND cours.promoId = promoId;'));
-        return view('lesson.listCours', ['list' => $cours]);
+        return view('lesson.listCours', ['list' => $cours,'user' => $user, 'promotion' => $promotion]);
     }
 
     public function updateCours(Request $request){
         $cours = cours::find($request->id);
 
         $cours->libelle = $request->libelle;
-        $cours->debut = $request->date.' '.$request->h_debut.':00';
-        $cours->fin = $request->date.' '.$request->h_fin.':00';
+       /* $cours->debut = $request->date.' '.$request->h_debut.':00';
+        $cours->fin = $request->date.' '.$request->h_fin.':00';*/
         $cours->userId = $request->userId;
         $cours->promoId = $request->promoId;
 

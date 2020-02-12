@@ -103,7 +103,7 @@
     </div>
 </body>
 
-  <footer class="footer" style="bottom: 0px; width: 100%; position: absolute;: 0px;">
+  <footer class="footer" style="bottom: 0px; width: 100%; position: fixed;: 0px;">
     <div class="container footer-copyright text-center py-3">
         <span class="text-muted">Challenge web LP DIM</span>
       <span class="text-muted"> © 2020:

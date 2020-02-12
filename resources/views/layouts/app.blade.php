@@ -50,7 +50,11 @@
                               </div>
                              
                         @else
-                            <a href="./teacherCall"><li>Gestion appel</li></a>
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                <a class="nav-item nav-link" href="./teacherrole">Gestion appel</a>
+                                </div>
+                            </div>
                         @endIf
                     @endGuest
                     </ul>

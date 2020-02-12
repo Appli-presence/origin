@@ -47,12 +47,9 @@ Route::post('/student/linkPromo', 'studentController@linkPromo');
 //Routes Prof
 
 Route::post('/teacher/add', 'ProfController@addProf')->name('addProf');
-
 Route::get('/teacher/update/{id}', 'ProfController@updateProfForm')->name('updateProfForm');
 Route::post('/teacher/update', 'ProfController@updateProf')->name('updateProf');
-
 Route::get('/teacher', 'ProfController@getProfs')->name('getProfs');
-
 Route::post('/teacher/delete/{id}', 'ProfController@deleteProf')->name('deleteProf');
 
 //RoutesPromotion

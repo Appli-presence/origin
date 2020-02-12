@@ -19,6 +19,10 @@ Route::get('/promotion', function () {
     return view('/promotion/index');
 });
 
+//Routes Teacher
+Route::get('/teacher', 'TeacherController@readIndex')->name('indexTeacher');
+Route::get('/teacher', 'TeacherController@readStudents')->name('readStudents');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

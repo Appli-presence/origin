@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-md-12">
             <div class="card">
-                <div class="card-header">Professeurs</div>
+                <div class="card-header">Étudiants</div>
                     <div class="card-body">
 
                         <div style="display: flex;">

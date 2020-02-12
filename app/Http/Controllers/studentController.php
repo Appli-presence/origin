@@ -8,13 +8,13 @@ use Illuminate\Http\Request;
 use App\Etudiant;
 use App\Promotion;
 use App\AppartientPromotion;
+use Illuminate\Support\Facades\DB;
 
 class studentController extends Controller
 {
     /*Selectionner tous les etudiants*/
     public function getAllStudents(){
-        $students = new Etudiant();
-        $students = Etudiant::all();
+        $students = DB::table('etudiants')->join('appartientpromotions', 'appartientpromotions.etudiantId', '=', 'etudiants.etudiantId')->join('promotions', 'promotions.promotionId', '=', 'appartientpromotions.promotionId')->get();
         $promotions = new Promotion();
         $promotions = Promotion::all();
         $return = ["student" =>  $students, "promo"=> $promotions];

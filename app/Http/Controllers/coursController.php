@@ -37,7 +37,7 @@ class coursController extends Controller
     public function getCours(){
         $user = User::where('role','NOT LIKE','ADMIN')->get();
         $promotion = Promotion::all();
-        $cours = DB::select(DB::raw('SELECT cours.*,name,promotions.libelle AS promo FROM cours, users, promotions WHERE cours.userId = users.id AND cours.promoId = promoId;'));
+        $cours = DB::select(DB::raw('SELECT cours.*,name,promotions.libelle AS promo FROM cours, users, promotions WHERE cours.userId = users.id AND cours.promoId = promotions.promotionId;'));
         return view('lesson.listCours', ['list' => $cours,'user' => $user, 'promotion' => $promotion]);
     }
 

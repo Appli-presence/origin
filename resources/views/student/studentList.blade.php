@@ -28,19 +28,23 @@
             </form>
         </div>
     </div>
+
     <table>
         <thead>
             <th></th>
             <th>Nom</th>
             <th>Prénom</th>
+            <th>Promotion</th>
             <th></th>
             <th></th>
         </thead>
+        
     @foreach ($param['student'] as $value)
         <tr>
             <td>{{$value->etudiantId}}</td>
             <td>{{$value->nom}}</td>
             <td>{{$value->prenom}}</td>
+            <td>{{$value->libelle}}</td>
             <td>
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modaledit">

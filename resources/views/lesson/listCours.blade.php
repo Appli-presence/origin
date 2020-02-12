@@ -66,7 +66,7 @@
                 <form action="{{route('updateCoursForm',['id'=>$item->coursId])}}">
                     <input type="submit" value="Modifier">
                 </form>
-            </td>
+            </td> 
             <td>
                 <form action="{{route('deleteCours',['id'=>$item->coursId])}}" method="post">
                     @csrf

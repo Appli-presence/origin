@@ -18,6 +18,7 @@ class CreateAssistancesTable extends Migration
             $table->unsignedBigInteger('coursId');
             $table->boolean('presence');
             $table->date('date');
+            $table->boolean('validationAbsence');
         });
     }
 

@@ -16,8 +16,8 @@ class CreateCoursTable extends Migration
         Schema::create('cours', function (Blueprint $table) {
             $table->bigIncrements('coursId');
             $table->String('libelle');
-            $table->dateTime('debut');
-            $table->dateTime('fin');
+            $table->dateTime('debut')->nullable();
+            $table->dateTime('fin')->nullable();
             $table->unsignedBigInteger('userId');
             $table->unsignedBigInteger('promoId');
             $table->timestamps();

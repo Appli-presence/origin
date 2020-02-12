@@ -34,8 +34,16 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
+                    @if ( Auth::user()->role == 'ADMIN')
+                        <a href="/studentList"><li>Gestion étudiants</li></a>
+                        <a href="/promotion"><li>Promotions</li></a>
+                        <a href="/cours"><li>Cours</li></a>
+                        <a href="/teacher"><li>Prof</li></a>
+                    @else
+                        <a href="./teacherCall"><li>Gestion appel</li></a>
+                    @endIf
+                    
                     </ul>
-
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->

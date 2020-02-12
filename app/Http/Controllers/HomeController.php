@@ -29,10 +29,6 @@ class HomeController extends Controller
         $id=Auth::id(); 
         $user=user::where('id',$id)->first();
         $role=$user->role;
-        if($role=="ADMIN"){
-            return view('admin');
-        }else{
-            return view('profs');
-        }
+        return view('home', ['role', $role]);
     }
 }

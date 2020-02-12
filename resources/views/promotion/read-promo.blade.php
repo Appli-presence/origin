@@ -6,21 +6,15 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Promotions</div>
-                <div class="card-body">
-                    <table>
-                        @foreach($promotions as $promotion)
-                            <td>
-                                <tr>{{ $promotion->libelle }}</tr>
-                                <tr>
-                                    <a href="/promotion/update-promo/{{ $promotion->promotionId }}">Modifier</a>
-                                </tr>
-                                <tr>
-                                    <a href="/promotion/delete/{{ $promotion->promotionId }}">Supprimer</a>
-                                </tr>
-                            </td>
-                        @endforeach
-                    </table>
-                </div>
+                <table>
+                    @foreach($promotions as $promotion)
+                    <div class="card-body">
+                        {{ $promotion->libelle }}
+                        <a href="/promotion/update-promo/{{ $promotion->promotionId }}">Modifier</a>
+                        <a href="/promotion/delete/{{ $promotion->promotionId }}">Supprimer</a>
+                    </div>
+                    @endforeach
+                </table>
             </div>
         </div>
     </div>

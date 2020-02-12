@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 use App\Etudiant;
+use App\Promotion;
+use App\AppartientPromotion;
 
 class studentController extends Controller
 {
@@ -13,7 +15,10 @@ class studentController extends Controller
     public function getAllStudents(){
         $students = new Etudiant();
         $students = Etudiant::all();
-        return view('student/studentList', ['param' => $students]);
+        $promotions = new Promotion();
+        $promotions = Promotion::all();
+        $return = ["student" =>  $students, "promo"=> $promotions];
+        return view('student/studentList', ['param' => $return]);
     }
     /*Selectionner etudiant selon la promotion*/
     public function getGroupStudents($id){
@@ -45,6 +50,15 @@ class studentController extends Controller
         $student = new Etudiant();
         $student = Etudiant::where('etudiantId', $studentId);
         $student->delete();
+        return redirect(route('studentList'));
+    }
+
+    public function linkPromo(Request $req){
+        $link = new AppartientPromotion();
+        $link->etudiantId = $req->post('studentId');
+        $link->promotionId = $req->post('promoId');
+        $link->save();
+
         return redirect(route('studentList'));
     }
 }

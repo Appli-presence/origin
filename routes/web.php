@@ -33,7 +33,7 @@ Route::post('/student/update', 'studentController@updateStudent');
 Route::get('/student/delete/{etudiantId}', 'studentController@deleteStudent');
 Route::get('/studentList', 'studentController@getAllStudents')->name('studentList');
 Route::get('/studentList/{{etudiantId}}', 'studentController@getGroupStudents');
-
+Route::post('/student/linkPromo', 'studentController@linkPromo');
 
 //RoutesPromotion
 //Search

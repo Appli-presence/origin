@@ -6,7 +6,6 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Promotions</div>
-                <table>
                     @foreach($promotions as $promotion)
                     <div class="card-body">
                         {{ $promotion->libelle }}
@@ -14,7 +13,6 @@
                         <a href="/promotion/delete/{{ $promotion->promotionId }}">Supprimer</a>
                     </div>
                     @endforeach
-                </table>
             </div>
         </div>
     </div>

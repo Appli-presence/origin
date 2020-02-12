@@ -2,8 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d94b4103-428a-486c-834c-8ee247edd919" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/promotion/update-promo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/promotion/update-promo.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PromotionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PromotionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/promotion/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/promotion/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/promotion/read-promo.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/promotion/read-promo.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

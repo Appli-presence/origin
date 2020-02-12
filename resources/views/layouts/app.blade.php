@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class=" navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,15 +38,23 @@
                     @guest
                     @else
                         @if ( Auth::user()->role == 'ADMIN')
-                            <a href="./studentList"><li>Gestion étudiants</li></a>
-                            <a href="./promotion"><li>Promotions</li></a>
-                            <a href="./cours"><li>Cours</li></a>
-                            <a href="./teacher"><li>Prof</li></a>
+                            
+
+                            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                                <div class="navbar-nav">
+                                  <a class="nav-item nav-link" href="./studentList">Gestion étudiants</a>
+                                  <a class="nav-item nav-link" href="./promotion">Gestion promotions</a>
+                                  <a class="nav-item nav-link" href="./cours">Gestion cours</a>
+                                  <a class="nav-item nav-link" href="./teacher" tabindex="-1" aria-disabled="true">Gestion Professeurs</a>
+                                </div>
+                              </div>
+                             
                         @else
                             <a href="./teacherCall"><li>Gestion appel</li></a>
                         @endIf
                     @endGuest
                     </ul>
+
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -73,6 +81,8 @@
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+
+                                    
                                         @csrf
                                     </form>
                                 </div>

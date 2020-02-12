@@ -4855,7 +4855,7 @@ input[type=button].btn-block {
 }
 
 .navbar-light .navbar-brand {
-  color: rgba(0, 0, 0, 0.9);
+  color: rgba(151, 27, 27, 0.9);
 }
 
 .navbar-light .navbar-brand:hover,
@@ -8790,7 +8790,7 @@ button.bg-dark:focus {
 
 .mr-auto,
 .mx-auto {
-  margin-right: auto !important;
+  margin: auto;
 }
 
 .mb-auto,

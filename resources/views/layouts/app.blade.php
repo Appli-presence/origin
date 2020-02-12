@@ -45,8 +45,6 @@
                             <a href="./teacherCall"><li>Gestion appel</li></a>
                         @endIf
                     @endGuest
-
-
                     </ul>
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

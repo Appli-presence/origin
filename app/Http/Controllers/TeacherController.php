@@ -5,8 +5,11 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Etudiant;
+use App\Assistance;
+use Illuminate\Support\Facades\Date;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Carbon;
 
 class TeacherController extends Controller
 {
@@ -23,8 +26,30 @@ class TeacherController extends Controller
             FROM cours, promotions
             WHERE cours.userId = '.$id.' AND cours.promoId = promotions.promotionId;'));
         //$promotion=promotion::all();
-        return view('/teacher/index',[
+        return view('/teacherRole/index',[
             "cours"=>$cours]);
+    }
+    public function faireAppel(Request $req)
+    {
+        $students = DB::select(
+            DB::raw('SELECT etudiants.*,appartientpromotions.promotionId
+            FROM etudiants,appartientpromotions
+            WHERE etudiants.etudiantId = appartientpromotions.etudiantId and appartientpromotions.promotionId='.$req->promo.' ;'));
+        foreach($students as $stud){
+            $assistant=new assistance();
+            $assistant->etudiantId=$stud->etudiantId;
+            $assistant->coursId=$req->input('cours');
+            if($req->input($stud->etudiantId)==1){
+                $assistant->presence=$req->input($stud->etudiantId);
+            }else{
+                $assistant->presence=0;
+            }
+
+            $assistant->date=Carbon::now()->toDateString();
+            $assistant->validationAbsence=1;
+            $assistant->save();
+        }
+        return redirect()->route('readStudents');
     }
 
     public function readStudents(){
@@ -35,9 +60,9 @@ class TeacherController extends Controller
             FROM cours, promotions
             WHERE cours.userId = '.$id.' AND cours.promoId = promotions.promotionId;'));
         $students = DB::select(
-                DB::raw('SELECT etudiants.*,appartientpromotions.promotionId as promoId
+                DB::raw('SELECT etudiants.*,appartientpromotions.promotionId
                 FROM etudiants,appartientpromotions
                 WHERE etudiants.etudiantId = appartientpromotions.etudiantId;'));
-        return view('teacher/index', ['param' => $students, "cours"=>$cours]);
+        return view('teacherRole/index', ['param' => $students, "cours"=>$cours]);
     }
 }

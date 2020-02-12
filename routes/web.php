@@ -20,8 +20,9 @@ Route::get('/promotion', function () {
 });
 
 //Routes Teacher
-Route::get('/teacher', 'TeacherController@readIndex')->name('indexTeacher');
-Route::get('/teacher', 'TeacherController@readStudents')->name('readStudents');
+Route::get('/teacherrole', 'TeacherController@readIndex')->name('indexTeacher');
+Route::get('/teacherrole', 'TeacherController@readStudents')->name('readStudents');
+Route::get('/teacherrole/appel', 'TeacherController@faireAppel')->name('faireAppel');
 
 Auth::routes();
 
